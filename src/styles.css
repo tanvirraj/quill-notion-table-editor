@@ -1,0 +1,16 @@
+h1 {
+  color: hotpink;
+  font-family: cursive;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.app {
+  margin: auto;
+  width: 50%;
+
+  padding: 10px;
+  border-radius: 3px;
+}
