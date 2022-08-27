@@ -1,6 +1,6 @@
-const log = console.log.bind(console);
 import Quill from "quill";
-var Delta = Quill.import("delta");
+
+const log = console.log.bind(console);
 
 const KEYS = {
   SLASH: 191,
@@ -11,7 +11,7 @@ const BLOCK_MENUS = [
   { name: "H1", desc: "Big section heading" },
 ];
 
-class Counter {
+class BlockMenu {
   constructor(quill, options) {
     this.quill = quill;
     this.options = options;
@@ -48,7 +48,6 @@ class Counter {
           border-b border-b-gray-200
           hover:bg-gray-200
           cursor-pointer
-
         "
         data-name="${item.name}"
       >
@@ -133,21 +132,12 @@ class Counter {
 }
 
 //registar new moudles
-Quill.register("modules/counter", Counter);
+Quill.register("modules/blockMenu", BlockMenu);
 
 var quill = new Quill("#editor", {
   theme: "snow",
   modules: {
     table: true,
-    counter: {
-      unit: "word",
-    },
+    blockMenu: true,
   },
-});
-
-const table = quill.getModule("table");
-
-document.querySelector("#insert-table").addEventListener("click", function () {
-  table.insertTable(2, 2);
-  console.log("heee");
 });
