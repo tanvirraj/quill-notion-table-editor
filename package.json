@@ -6,7 +6,8 @@
     "build": "parcel build"
   },
   "dependencies": {
-    "quill": "2.0.0-dev.3"
+    "quill": "2.0.0-dev.3",
+    "positioning": "^2.0.0"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
