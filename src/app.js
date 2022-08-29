@@ -1,5 +1,6 @@
 import Quill from "quill";
 import { positionElements, Placement } from "positioning";
+import { TOGGLE_TEMPLATE } from "./utils";
 
 const log = console.log.bind(console);
 
@@ -26,8 +27,6 @@ const DEFAULT_PLACEMENT = [
 ];
 
 class BlockMenu {
-  TOGGLE_TEMPLATE = `<svg width="9" height="9" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g><path d="M8,22c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S12.411,22,8,22z"/><path d="M52,22c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S56.411,22,52,22z"/><path d="M30,22c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S34.411,22,30,22z"/></g></svg>`;
-
   DEFAULTS = {
     maxRowCount: -1,
   };
@@ -45,7 +44,7 @@ class BlockMenu {
 
     this.toggle = quill.addContainer("ql-table-toggle");
     this.toggle.classList.add("ql-table-toggle_hidden");
-    this.toggle.innerHTML = this.TOGGLE_TEMPLATE;
+    this.toggle.innerHTML = TOGGLE_TEMPLATE;
     this.toggle.addEventListener("click", this.toggleClickHandler);
     this.quill.on(QuillEvents.EDITOR_CHANGE, this.editorChangeHandler);
     this.quill.root.addEventListener("contextmenu", this.contextMenuHandler);
@@ -234,8 +233,8 @@ class BlockMenu {
     container.id = "quill-menu-module";
     container.className = "absolute shadow-lg border w-72 z-50 bg-white";
     let html = `
-    <p class="text-gray-500 p-2 border-b border-b-gray-200 text-sm">
-      BASICK BLOCKS
+    <p class="text-gray-500 p-1 border-b border-b-gray-200 text-xs">
+     BASIC BLOCKS
     </p>
     <ul>`;
 
@@ -337,6 +336,7 @@ Quill.register("modules/blockMenu", BlockMenu);
 
 var quill = new Quill("#editor", {
   theme: "snow",
+  placeholder: "Type '/' for commands",
   modules: {
     table: true,
     blockMenu: true,

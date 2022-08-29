@@ -1,6 +1,8 @@
-## quill-custom-module
+## Notion' "/table" like table editor based on quilljs
 
-How to write quill custom module. learn more about from [quill doc](https://quilljs.com/guides/building-a-custom-module/)
+play with live demo [DEMO](https://tanvirraj.github.io/quill-notion-table-editor/)
+
+![](./assest/simplified_demo.mov)
 
 ## Getting Started
 
