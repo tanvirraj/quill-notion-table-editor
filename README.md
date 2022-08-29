@@ -2,7 +2,7 @@
 
 play with live demo [DEMO](https://tanvirraj.github.io/quill-notion-table-editor/)
 
-![](./assest/simplified_demo.mov)
+![video](/assest/simplified_demo.mov)
 
 ## Getting Started
 
